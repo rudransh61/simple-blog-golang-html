@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blog</title>
+</head>
+<body>
+    <h1>Simple Blog</h1>
+    <ul>
+        {{range .Posts}}
+        <li><a href="/post/{{.ID}}">{{.Title}}</a></li>
+        {{end}}
+    </ul>
+    <h2>Create New Post</h2>
+    <form action="/create" method="post">
+        <input type="text" name="title" placeholder="Title" required><br>
+        <textarea name="content" placeholder="Content" required></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
